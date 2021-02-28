@@ -11,7 +11,8 @@ function Sushi({
   setAcctBalance,}) {
 
   function onEatSushi(){
-    setAcctBalance(acctBalance - price)
+    if (price <= acctBalance){
+    setAcctBalance(acctBalance - price)}
   }
 
   return (
