@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import MoreButton from "./MoreButton";
 import Sushi from "./Sushi"
 
-function SushiContainer({sushis, setSushis, acctBalance, setAcctBalance}) {
+function SushiContainer({sushis, setSushis, acctBalance, setAcctBalance, handleEatSushi}) {
 
   const [sushiIndex, setSushiIndex] = useState(0)
 // console.log(sushis)
@@ -16,6 +16,7 @@ function SushiContainer({sushis, setSushis, acctBalance, setAcctBalance}) {
       price={sushi.price}
       acctBalance={acctBalance} 
       setAcctBalance={setAcctBalance}
+      handleEatSushi={handleEatSushi}
     />
     )
   })

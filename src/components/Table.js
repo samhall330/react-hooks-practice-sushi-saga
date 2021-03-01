@@ -3,7 +3,7 @@ import React, { useState } from "react";
 function Table({ plates = [], acctBalance}) {
   // renders an empty plate for every element in the array
   const emptyPlates = plates.map((_, index) => (
-    <div className="empty-plate" style={{ top: -7 * index }} />
+    <div key={index} className="empty-plate" style={{ top: -7 * index }} />
   ));
 
   

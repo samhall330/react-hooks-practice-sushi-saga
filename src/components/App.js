@@ -10,6 +10,13 @@ function App() {
 
   const [acctBalance, setAcctBalance] = useState(100)
 
+  const [plates, setPlates] = useState([])
+
+  function handleEatSushi(){
+    const updatedPlates = [...plates, 1]
+    setPlates(updatedPlates)
+  }
+
   useEffect (() => {
     fetch(`${API}`)
     .then(r => r.json())
@@ -23,8 +30,9 @@ function App() {
       sushis={sushis} 
       setSushis={setSushis} 
       acctBalance={acctBalance} 
-      setAcctBalance={setAcctBalance}/>
-      <Table acctBalance={acctBalance}/>
+      setAcctBalance={setAcctBalance}
+      handleEatSushi={handleEatSushi}/>
+      <Table plates={plates} acctBalance={acctBalance}/>
     </div>
   );
 }
