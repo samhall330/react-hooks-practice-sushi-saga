@@ -14,12 +14,10 @@ function Sushi({
   const [eaten, setEaten] = useState(false)   
 
   function onEatSushi(){
-      if (!eaten) {
+      if (!eaten && price <= acctBalance) {
         setEaten(true);
         handleEatSushi();
-      }
-      if (price <= acctBalance){
-    setAcctBalance(acctBalance - price)}
+        setAcctBalance(acctBalance - price)}
 
   }
 
